@@ -4,5 +4,5 @@ def print_list_integer(my_list=[]):
 
     if (listLen != 0):
         for el in my_list:
-            print(el, end="\n")
+            print("{:d}".format(el), end="\n")
 
