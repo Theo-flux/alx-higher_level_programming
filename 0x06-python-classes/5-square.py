@@ -6,9 +6,9 @@
 class Square:
     """Represents a square."""
 
-
     def __init__(self, size=0):
         """An init method for class Square.
+        
         Args:
             size (int): An integer varibale.
         """
@@ -22,6 +22,7 @@ class Square:
     @property
     def size(self):
         """A getter(accessor) method for private instance attribute: size.
+        
         Returns:
             The return value is the private attribute size.
         """
@@ -30,6 +31,7 @@ class Square:
     @size.setter
     def size(self, value):
         """A setter(mutator) method for private instance attribute: size.
+        
         Args:
             value (int): The size of the square.
         """
@@ -42,6 +44,7 @@ class Square:
 
     def area(self):
         """A public instance menthod
+        
         Returns:
             The return value is the area of a square
         """
