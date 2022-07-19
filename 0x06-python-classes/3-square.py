@@ -8,10 +8,8 @@ class Square:
 
     def __init__(self, size=0):
         """An init method for class Square.
-
         Args:
             size (int): An integer varibale.
-
         """
         if (type(size) != int):
             raise TypeError("size must be an integer")
@@ -23,10 +21,7 @@ class Square:
 
     def area(self):
         """A public instance menthod
-
         Returns:
             The return value is the area of a square
-
         """
-
         return self.__size**2
