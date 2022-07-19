@@ -9,29 +9,17 @@ class Square:
 
     def __init__(self, size=0, position=(0,0)):
         """An init method for class Square.
-
         Args:
             size (int): An integer varibale.
             position (int): An integer variable.
-
         """
-        if (type(size) != int):
-            raise TypeError("size must be an integer")
-        elif (size < 0):
-            raise ValueError("size must be >= 0")
-        else:
-            self.size = size
-
-        if ((type(position) != tuple) and (position[0] < 0) and (position[1] < 0)):
-            raise TypeError("position must be a tuple of 20 positive integers")
-        else:
-            self.position = position
+        self.size = size
+        self.position = position
 
 
     @property
     def size(self):
         """A getter(accessor) method for private instance attribute: size.
-
         Returns:
             The return value is the private attribute size.
         """
@@ -41,7 +29,6 @@ class Square:
     @property
     def position(self):
         """getter method to retrieve private instance of position
-
         Returns:
             Private attribute __position
         """
@@ -51,7 +38,6 @@ class Square:
     @size.setter
     def size(self, value):
         """A setter(mutator) method for private instance attribute: size.
-
         Args:
             value (int): The size of the square.
         """
@@ -66,11 +52,15 @@ class Square:
     @position.setter
     def position(self, position):
         """A setter(mutator) method for private instance attribute: position.
-
         Args:
             position (int): The position of the square.
         """
-        if ((type(position) != tuple) and (position[0] < 0) and (position[1] < 0)):
+        if ((type(position) != tuple) or
+            (position[0] < 0) or
+            (position[1] < 0) or
+            len(position) != 2 or
+            (type(position[0]) != int) or
+            (type(position[1]) != int)):
             raise TypeError("position must be a tuple of 20 positive integers")
         else:
             self.__position = position
@@ -78,10 +68,8 @@ class Square:
 
     def area(self):
         """A public instance menthod
-
         Returns:
             The return value is the area of a square
-
         """
         return self.__size**2
 
@@ -93,5 +81,5 @@ class Square:
             print("", end="\n")
         else:
             while i < self.__size:
-                print("{}{}".format("-"*self.__position[1], "#"*self.__size), end="\n")
+                print("{}{}".format(" "*self.__position[0], "#"*self.__size), end="\n")
                 i = i + 1
