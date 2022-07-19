@@ -1,85 +1,59 @@
 #!/usr/bin/python3
 
-"""Define a class square."""
+"""Define a class Square."""
 
 
 class Square:
-    """Represents a square."""
+    """Represent a square."""
 
-
-    def __init__(self, size=0, position=(0,0)):
-        """An init method for class Square.
+    def __init__(self, size=0, position=(0, 0)):
+        """Initialize a new square.
         Args:
-            size (int): An integer varibale.
-            position (int): An integer variable.
+            size (int): The size of the new square.
+            position (int, int): The position of the new square.
         """
         self.size = size
         self.position = position
 
-
     @property
     def size(self):
-        """A getter(accessor) method for private instance attribute: size.
-        Returns:
-            The return value is the private attribute size.
-        """
-        return self.__size
-    
-
-    @property
-    def position(self):
-        """getter method to retrieve private instance of position
-        Returns:
-            Private attribute __position
-        """
-        return self.__position
-
+        """Get/set the current size of the square."""
+        return (self.__size)
 
     @size.setter
     def size(self, value):
-        """A setter(mutator) method for private instance attribute: size.
-        Args:
-            value (int): The size of the square.
-        """
-        if (type(value) != int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif (value < 0):
+        elif value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
-    
+        self.__size = value
+
+    @property
+    def position(self):
+        """Get/set the current position of the square."""
+        return (self.__position)
 
     @position.setter
-    def position(self, position):
-        """A setter(mutator) method for private instance attribute: position.
-        Args:
-            position (int): The position of the square.
-        """
-        if ((type(position) != tuple) or
-            (position[0] < 0) or
-            (position[1] < 0) or
-            len(position) != 2 or
-            (type(position[0]) != int) or
-            (type(position[1]) != int)):
-            raise TypeError("position must be a tuple of 20 positive integers")
-        else:
-            self.__position = position
-
+    def position(self, value):
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
-        """A public instance menthod
-        Returns:
-            The return value is the area of a square
-        """
-        return self.__size**2
-
+        """Return the current area of the square."""
+        return (self.__size * self.__size)
 
     def my_print(self):
-        """Prints in stdout the square with the character #"""
-        i = 0
-        if (self.__size == 0 and self.__postion[1] > 0):
-            print("", end="\n")
-        else:
-            while i < self.__size:
-                print("{}{}".format(" "*self.__position[0], "#"*self.__size), end="\n")
-                i = i + 1
+        """Print the square with the # character."""
+        if self.__size == 0:
+            print("")
+            return
+
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print("")
