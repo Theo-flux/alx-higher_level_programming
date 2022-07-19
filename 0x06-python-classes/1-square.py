@@ -12,4 +12,4 @@ class Square:
         Args:
             size (int): Instantiated size variable for square. 
         """
-        self__size = size
+        self.__size = size
