@@ -1,9 +1,10 @@
 #!/usr/bin/python3
+
 """Define a class square."""
 
 
 class Square:
-    """A class that defines a square."""
+    """Represents a square."""
 
     def __init__(self, size=0):
         """An init method for class Square.
@@ -12,7 +13,6 @@ class Square:
             size (int): An integer varibale.
 
         """
-        
         if (type(size) != int):
             raise TypeError("size must be an integer")
         elif (size < 0):
