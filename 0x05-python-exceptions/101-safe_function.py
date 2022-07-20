@@ -12,8 +12,7 @@ def safe_function(fct, *args):
         True or False
     """
     try:
-        a, b = args
-        return fct(a, b)
+        return fct(*args)
     except (IndexError, ZeroDivisionError):
         if (IndexError("list index out of range")):
             print("Exception: {}".format(sys.exc_info()[1]), file=sys.stderr)
