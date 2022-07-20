@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 import sys
 
+
 def safe_function(fct, *args):
     """Function that executes a function safely
-
     Args:
         fct (pointer): pointer to a function
         *args: non-keywrod Arguments
-
     Retuns:
         True or False
     """
