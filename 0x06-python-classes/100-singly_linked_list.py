@@ -61,8 +61,8 @@ class SinglyLinkedList:
         """
         new = Node(value)
         if (self.__head == None):
-            self.__head = new
             new.next_node = None
+            self.__head = new
         elif (self.__head.data > value):
             new.next_node = self.__head
             self.__head = new
@@ -72,7 +72,6 @@ class SinglyLinkedList:
                 tmp = tmp.next_node
             new.next_node = None
             tmp.next_node = new
-            tmp = new
 
     def __str__(self):
         """Print the entire list in stdout. one node number by line."""
@@ -82,4 +81,3 @@ class SinglyLinkedList:
             llist.append(str(tmp.data))
             tmp = tmp.next_node
         return("\n".join(llist))
-
