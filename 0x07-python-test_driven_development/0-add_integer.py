@@ -6,7 +6,14 @@ The 0-add-integer module supplies one function, add_integer()
 """
 
 def add_integer(a, b=98):
-    """Return the addition of a and b"""
+    """Return the addition of a and b
+    Args:
+        a (int): first positional argument
+        b (int): second positional argument with an optional value
+    Returns:
+        addition of a and b
+    """
+
     if not a:
         raise TypeError
     if type(a) not in [int, float]:
