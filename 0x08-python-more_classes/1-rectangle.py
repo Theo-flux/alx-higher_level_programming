@@ -1,11 +1,13 @@
-#!/usr/bin/python3
+i#!/usr/bin/python3
 """The 0-rectangle module file"""
 
 
 class Rectangle:
     """A representation of a simple rectangle type"""
+    
     def __init__(self, width=0, height=0):
         """The instance method called when a new rectangle is created
+        
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
@@ -16,6 +18,7 @@ class Rectangle:
     @property
     def width(self):
         """Getter property of private instance attribute width
+        
         Returns:
             The width of the object
         """
@@ -24,6 +27,7 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """setter property of private instance of attribute width
+        
         Args:
             value (int): The value for the private instance attribute width
         """
@@ -36,6 +40,7 @@ class Rectangle:
     @property 
     def height(self):
         """Getter property of private instance attribute height
+        
         Returns:
             The height of the object
         """
@@ -44,6 +49,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """setter property of private instance of attribute height
+        
         Args:
             value (int): The value for the private instance attribute height
         """
