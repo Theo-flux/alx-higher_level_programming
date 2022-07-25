@@ -52,13 +52,13 @@ class Rectangle:
 
     def __str__(self):
         """instance methof for 'inofrmal' rep of object"""
+        if self.__height == 0 and self.__width == 0:
+            return ""
         i = 0
         val = []
-        if self.__height > 0 and self.__width > 0:
-            while i < self.__height:
-                val.append("{}\n".format("#"*self.__width))
-                if i == self.__height - 1:
-                    val.append("{}".format("#"*self.__width))
-                i = 1 + i
-            return("".join(val))
-        return ""
+        while i < self.__height:
+            val.append("{}\n".format("#"*self.__width))
+            if i == self.__height - 1:
+                val.append("{}".format("#"*self.__width))
+            i = 1 + i
+        return("".join(val))
