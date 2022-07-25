@@ -53,7 +53,8 @@ class Rectangle:
     def __str__(self):
         """instance methof for 'inofrmal' rep of object"""
         if self.__height == 0 and self.__width == 0:
-            return ""
+            return ("")
+
         i = 0
         val = []
         while i < self.__height:
