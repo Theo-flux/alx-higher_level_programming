@@ -4,5 +4,5 @@ The ``0-rectangle`` module file
 """
 
 class Rectangle:
-    """A representation of the Rectangle type"""
+    """A representation of a simple rectangle type"""
     pass
