@@ -17,11 +17,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """Getter property of private instance attribute width
-        
-        Returns:
-            The width of the object
-        """
+        """Get/set the width"""
         return self.__width
         
     @width.setter
@@ -34,11 +30,7 @@ class Rectangle:
 
     @property 
     def height(self):
-        """Getter property of private instance attribute height
-        
-        Returns:
-            The height of the object
-        """
+        """Get/set the height"""
         return self.__height
 
     @height.setter
