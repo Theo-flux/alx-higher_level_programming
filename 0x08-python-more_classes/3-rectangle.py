@@ -57,8 +57,8 @@ class Rectangle:
         i = 0
         val = []
         while i < self.__height:
-            val.append("{}\n".format("#"*self.__width))
-            if i == self.__height - 1:
-                val.append("{}".format("#"*self.__width))
+            val.append("{}".format("#"*self.__width))
+            if i != self.__height - 1:
+                val.append("\n")
             i = 1 + i
         return("".join(val))
