@@ -11,32 +11,51 @@ def matrix_mul(m_a, m_b):
     Returns:
         a new matrix
     """
-    if type(m_a) is not list:
+    if m_a == [] or m_a == [[]]:
+        raise ValueError("m_a can't be empty")
+
+    if m_b == [] or m_b == [[]]:
+        raise ValueError("m_b can't be empty")
+
+    if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
 
-    if type(m_b) is not list:
+    if not isinstance(m_b, list):
         raise TypeError("m_b must be a list")
 
-    if False in [False if type(row) != list else True for row in m_a]:
+    if not all(isinstance(row, list) for row in m_a):
         raise TypeError("m_a must be a list of lists")
-
-    if False in [False if type(row) != list else True for row in m_b]:
-        raise TypeError("m_b must be a list of lists")
     
-    if False in [False if type(col) not in [int, float] else True for row in m_a for col in row]:
-        raise TypeError("m_a should contain only integers or floats")
+    if not all(isinstance(row, list) for row in m_b):
+        raise TypeError("m_b must be a list of lists")
 
-    if [False in [False if type(col) not in [int, float] else True for row in m_b for col in row]:]:
+    if not all((isinstance(ele, int) or isinstance(ele, float))
+               for ele in [num for row in m_a for num in row]):
+        raise TypeError("m_a should contain only integers or floats")
+    
+    if not all((isinstance(ele, int) or isinstance(ele, float))
+               for ele in [num for row in m_b for num in row]):
         raise TypeError("m_b should contain only integers or floats")
 
-    if max([len(row) for row in m_a]) != min([len(row) for row in m_a]):
-        raise TypeError("each row of m_a must be of the same size")
+    if not all(len(row) == len(m_a[0]) for row in m_a):
+        raise TypeError("each row of m_a must should be of the same size")
+    
+    if not all(len(row) == len(m_b[0]) for row in m_b):
+        raise TypeError("each row of m_b must should be of the same size")
 
-    if max([len(row) for row in m_b]) != min([len(row) for row in m_b]):
-        raise TypeError("each row of m_b must be of the same size")
+    if len(m_a[0]) != len(m_b):
+        raise ValueError("m_a and m_b can't be multiplied")
 
-    numOfRow_m_a = len(m_a[0])
-    numOfCol_m_a = len(m_a)
+    m = len(m_a)
+    n = len(m_a[0])
+    p = len(m_b)
+    q = len(m_b[0])
+    row, col, i, j, k = 0, 0, 0, 0, 0
+    m_c = [[0 for col in range(q)] for row in range(m)]
 
-    numOfRow_m_b = len(m_b[0])
-    numOfCol_m_b = len(m_b)
+    for i in range(0, m):
+        for j in range(0, q):
+            for k in range(0, p):
+                m_c[i][j] += m_a[i][k] * m_b[k][j]
+
+    return m_c
