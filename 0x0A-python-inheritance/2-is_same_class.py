@@ -8,8 +8,10 @@ def is_same_class(obj, a_class):
 	class
 
 	Args:
-	    obj: object
-	    a_class: class
+	    obj (any): object to check
+	    a_class (type): class to confirm with
+	Return:
+	     True is obj and a_class are of the same type
 	"""
 	if type(obj) == a_class:
 		return True
