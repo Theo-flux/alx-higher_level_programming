@@ -2,10 +2,8 @@
 """Define MyList class"""
 
 class MyList(list):
-	"""A representation of MyList data type"""
-    
+	"""Representation of MyList class"""
+	
 	def print_sorted(self):
-        	"""Public instance method that prints the
-        	list in ascending order
-        	"""
-        	print(sorted(self))
+		"""print list in sorted order"""
+		print(sorted(self))
