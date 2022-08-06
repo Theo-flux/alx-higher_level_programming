@@ -90,4 +90,8 @@ class Rectangle(Base):
 		self.__y = value
 	
 	def area(self):
-		return self.__width*self.__height 
+		return self.__width*self.__height
+	
+	def display(self):
+		for _ in range(0, self.__height):
+			print("{}".format("#"*self.__width), end="\n")
