@@ -36,10 +36,10 @@ class Rectangle(Base):
 		if y < 0:
 			raise ValueError("y must be >= 0")
 		
-		self.__width = width
-		self.__height = height
-		self.__x = x
-		self.__y = y
+		self.width = width
+		self.height = height
+		self.x = x
+		self.y = y
 		
 	@property
 	def width(self):
@@ -139,6 +139,10 @@ class Rectangle(Base):
 				elif key == "y":
 					self.__y = value
 
+	def to_dictionary(self):
+		return {'x': self.__x, 'y': self.__y,\
+			'id': self.id, 'height': self.__height,\
+			'width': self.__width}
 
 	def __str__(self):
 		stringified = "[{}] ({}) {}/{} - {}/{}"\
