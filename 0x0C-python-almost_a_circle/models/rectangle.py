@@ -98,6 +98,22 @@ class Rectangle(Base):
 		for _ in range(0, self.__height):
 			print("{}{}".format(" "*self.__x, "#"*self.__width), end="\n")
 	
+	def update(self, *args):
+		if args and len(args) != 0:
+			a = 0
+			for arg in args:
+				if a == 0:
+					self.id = arg
+				elif a == 1:
+					self.__width = arg
+				elif a == 2:
+					self.__height = arg
+				elif a == 3:
+					self.__x = arg
+				elif a == 4:
+					self.__y = arg
+				a += 1	
+
 	def __str__(self):
 		stringified = "[{}] ({}) {}/{} - {}/{}"\
 				.format(self.__class__.__name__,\
