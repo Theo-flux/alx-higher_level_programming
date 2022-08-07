@@ -98,7 +98,20 @@ class Rectangle(Base):
 		for _ in range(0, self.__height):
 			print("{}{}".format(" "*self.__x, "#"*self.__width), end="\n")
 	
-	def update(self, *args):
+	def update(self, *args, **kwargs):
+		""" Update class
+
+		Args:
+		     *args (non-keyword arguments):
+			1st argument should be the id attribute
+			2nd argument should be the width attribute
+			3rd argument should be the height attribute
+			4th argument should be the x attribute
+			5th argument should be the y attribute
+
+		      **kwargs (keyword arguments):
+			each key represents the the attribute to the instance
+		"""
 		if args and len(args) != 0:
 			a = 0
 			for arg in args:
@@ -112,7 +125,20 @@ class Rectangle(Base):
 					self.__x = arg
 				elif a == 4:
 					self.__y = arg
-				a += 1	
+				a += 1
+		elif kwargs and len(kwargs) != 0:
+			for key, value in kwargs.items():
+				if key == "id":
+					self.id = value
+				elif key == "width":
+					self.__width = value
+				elif key == "height":
+					self.__height = value
+				elif key == "x":
+					self.__x = value
+				elif key == "y":
+					self.__y = value
+
 
 	def __str__(self):
 		stringified = "[{}] ({}) {}/{} - {}/{}"\
