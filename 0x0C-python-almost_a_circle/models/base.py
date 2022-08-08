@@ -54,6 +54,11 @@ class Base:
 	
 	@classmethod
 	def save_to_file(cls, list_objs):
+		""" saves lists to file
+		
+		Args:
+		     list_objs (list): list of dictionaries
+		"""
 		filename = "{}.json".format(cls.__name__)
 		with open(filename, mode="w") as f:
 			res = ""
@@ -62,3 +67,21 @@ class Base:
 			else:
 				res = [obj.to_dictionary() for obj in list_objs]
 			f.write(cls.to_json_string(res))
+
+	@classmethod
+	def create(cls, **dictionary):
+		""" create- classmethod
+		
+		Args:
+		    **dictionary (keyword args): double pointer to a dictionary
+			
+		Return:
+		    instance with all attributes already set.
+		"""
+		if dictionary and dictionary != {}:
+			if cls.__name__ == "Rectangle":
+				dummy = cls(4, 8)
+			else:
+				dummy = cls(8)
+			dummy.update(**dictionary)
+			return dummy
