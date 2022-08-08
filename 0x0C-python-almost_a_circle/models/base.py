@@ -19,6 +19,7 @@ class Base:
 		else:
 			Base.__nb_objects += 1
 			self.id = Base.__nb_objects
+
 	@staticmethod
 	def to_json_string(list_dictionaries):
 		""" Dictionary to JSON string
@@ -34,7 +35,23 @@ class Base:
 		if list_dictionaries == None or list_dictionaries == []:
 			return "[]"
 		return json.dumps(list_dictionaries)
+
+	@staticmethod
+	def from_json_string(json_string):
+		""" converts json to string
 		
+		Args:
+		     json_string (list): is a string representing a list of
+		     dictionaries
+		
+		Returns:
+		     list of the JSON string representation
+		"""
+		import json
+		if json_string == None  or json_string == []:
+			return []
+		return json.loads(json_string)	
+	
 	@classmethod
 	def save_to_file(cls, list_objs):
 		filename = "{}.json".format(cls.__name__)
