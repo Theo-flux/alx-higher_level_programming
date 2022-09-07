@@ -1,4 +1,5 @@
 -- script that lists all records of the table second_table
 -- Records are ordered by score field in desc order
-UPDATE `score` FROM `second_table`
+UPDATE `second_table`
+SET `score` = 10
 WHERE `name` = 'Bob';
