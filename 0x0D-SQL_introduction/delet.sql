@@ -1,1 +1,1 @@
-DELETE FROM `first_table` WHERE id = NULL;
+DELETE FROM `first_table` WHERE name = "";
