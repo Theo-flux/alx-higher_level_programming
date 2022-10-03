@@ -1,12 +1,8 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
-
-if (argv) {
-  if (argv.length === 1) {
-    console.log('Argument found');
-  } else {
-    console.log('Arguments found');
-  }
-} else {
-  console.log('No argument');
-}
+console.log(
+  process.argv.length === 2
+    ? 'No argument'
+    : process.argv.length === 3
+    ? 'Argument found'
+    : 'Arguments found',
+);
