@@ -1,17 +1,6 @@
 #!/usr/bin/node
 const fs = require('fs');
-const path = require('path');
+const a = fs.readFileSync(process.argv[2], 'utf8');
+const b = fs.readFileSync(process.argv[3], 'utf8');
 
-process.argv.slice(2, -1).forEach((element) => {
-  const filePath = path.join(__dirname, element.toString());
-
-  fs.readFile(filePath, { encoding: 'utf-8' }, (err, data) => {
-    if (!err) {
-      fs.appendFile(process.argv.slice(-1).toString(), `${data}\n`, (err) => {
-        if (err) {
-          console.log(err);
-        }
-      });
-    }
-  });
-});
+fs.writeFileSync(process.argv[4], a + b);
