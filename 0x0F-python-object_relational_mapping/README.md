@@ -41,18 +41,18 @@ Indeed, all of them have the same type of syntax, but not always. Please read tu
 
 ## Resources
 Read or watch
-[Object-relational mappers](https://alx-intranet.hbtn.io/rltoken/a8DUOWhXpNX3TEwgyT-U8A)
-[mysqlclient/MySQLdb documentation (please don’t pay attention to _mysql)](https://alx-intranet.hbtn.io/rltoken/JtFaKjnqxudr6Hi05Us1Lw)
-[MySQLdb tutorial](https://alx-intranet.hbtn.io/rltoken/TdUSYFNGbXJG1WjCEoq5FA)
-[SQLAlchemy tutorial](https://alx-intranet.hbtn.io/rltoken/YyL5hsscviNH04XGW-XpfA)
-[SQLAlchemy](https://alx-intranet.hbtn.io/rltoken/j9azWF2Db_2rNolTxOF3SA)
-[mysqlclient/MySQLdb](https://alx-intranet.hbtn.io/rltoken/0zLhY9KqKjn-zmdb7X598Q)
-[Introduction to SQLAlchemy](https://alx-intranet.hbtn.io/rltoken/pw50Bl1Bj84wksxm018dwA)
-[Flask SQLAlchemy](https://alx-intranet.hbtn.io/rltoken/B-xIdMtGvpus8vHxAIRrPg)
-[10 common stumbling blocks for SQLAlchemy newbies](https://alx-intranet.hbtn.io/rltoken/deIzPMrfK8Ixqm-AboFHWg)
-[Python SQLAlchemy Cheatsheet](https://alx-intranet.hbtn.io/rltoken/dZfUNK3lJicGMK5PU0bE7Q)
-[SQLAlchemy ORM Tutorial for Python Developers (Warning: This tutorial is with PostgreSQL, but the concept of SQLAlchemy is the same with MySQL)](https://alx-intranet.hbtn.io/rltoken/hNxBKC8lHge5XjsRO8ksHQ)
-[SQLAlchemy Tutorial](https://alx-intranet.hbtn.io/rltoken/5G_R2NmQRFqiZb84qxYERQ)
+* [Object-relational mappers](https://alx-intranet.hbtn.io/rltoken/a8DUOWhXpNX3TEwgyT-U8A)
+* [mysqlclient/MySQLdb documentation (please don’t pay attention to _mysql)](https://alx-intranet.hbtn.io/rltoken/JtFaKjnqxudr6Hi05Us1Lw)
+* [MySQLdb tutorial](https://alx-intranet.hbtn.io/rltoken/TdUSYFNGbXJG1WjCEoq5FA)
+* [SQLAlchemy tutorial](https://alx-intranet.hbtn.io/rltoken/YyL5hsscviNH04XGW-XpfA)
+* [SQLAlchemy](https://alx-intranet.hbtn.io/rltoken/j9azWF2Db_2rNolTxOF3SA)
+* [mysqlclient/MySQLdb](https://alx-intranet.hbtn.io/rltoken/0zLhY9KqKjn-zmdb7X598Q)
+* [Introduction to SQLAlchemy](https://alx-intranet.hbtn.io/rltoken/pw50Bl1Bj84wksxm018dwA)
+* [Flask SQLAlchemy](https://alx-intranet.hbtn.io/rltoken/B-xIdMtGvpus8vHxAIRrPg)
+* [10 common stumbling blocks for SQLAlchemy newbies](https://alx-intranet.hbtn.io/rltoken/deIzPMrfK8Ixqm-AboFHWg)
+* [Python SQLAlchemy Cheatsheet](https://alx-intranet.hbtn.io/rltoken/dZfUNK3lJicGMK5PU0bE7Q)
+* [SQLAlchemy ORM Tutorial for Python Developers (Warning: This tutorial is with PostgreSQL, but the concept of SQLAlchemy is the same with MySQL)](https://alx-intranet.hbtn.io/rltoken/hNxBKC8lHge5XjsRO8ksHQ)
+* [SQLAlchemy Tutorial](https://alx-intranet.hbtn.io/rltoken/5G_R2NmQRFqiZb84qxYERQ)
 
 ## Learning Objectives
 
@@ -86,8 +86,18 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 8. Your code should use the pycodestyle (version 2.8.*)
 9. All your files must be executable
 10. The length of your files will be tested using wc
-11. All your modules should have a documentation (```python python3 -c 'print(__import__("my_module").__doc__)'```)
-12. All your classes should have a documentation (```python python3 -c 'print(__import__("my_module").MyClass.__doc__)'```)
-13. All your functions (inside and outside a class) should have a documentation (```python python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'```)
+11. All your modules should have a documentation
+    ```python 
+    python3 -c 'print(__import__("my_module").__doc__)'
+    ```
+12. All your classes should have a documentation 
+    ```python
+    python3 -c 'print(__import__("my_module").MyClass.__doc__)'
+    ```
+13. All your functions (inside and outside a class) should have a documentation 
+    ```python
+    python3 -c 'print(__import__("my_module").my_function.__doc__)'
+    python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+    ```
 14. A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 15. You are not allowed to use execute with sqlalchemy
