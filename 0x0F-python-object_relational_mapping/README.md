@@ -81,7 +81,10 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 3. Your files will be executed with MySQLdb version 2.0.x
 4. Your files will be executed with SQLAlchemy version 1.4.x
 5. All your files should end with a new line
-6. The first line of all your files should be exactly ```python #!/usr/bin/python3```
+6. The first line of all your files should be exactly 
+    ```python 
+    #!/usr/bin/python3
+    ```
 7. A README.md file, at the root of the folder of the project, is mandatory
 8. Your code should use the pycodestyle (version 2.8.*)
 9. All your files must be executable
