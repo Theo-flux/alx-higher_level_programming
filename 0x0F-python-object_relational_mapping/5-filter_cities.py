@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 a script that takes in the name of a state as an argument and
 lists all cities of that state, using the database hbtn_0e_4_us
@@ -32,6 +32,6 @@ if __name__ == '__main__':
         if (i != len(res) - 1):
             print(res[i][0], end=', ')
         else:
-            print(res[i][0], end='')
+            print(res[i][0])
     cur.close()
     db.close()
