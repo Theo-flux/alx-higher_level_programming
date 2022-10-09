@@ -1,7 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
-a script that lists all State objects, and corresponding City objects,
-contained in the database hbtn_0e_101_usa
+a script that lists all City objects from the database hbtn_0e_101_usa
 """
 import sys
 from sqlalchemy import create_engine
@@ -18,8 +17,7 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    res = session.query(State).filter(State.id)
-    for r in res:
-        print("{}: {}".format(r.id, r.name))
-        for c in r.cities:
-            print("\t{}: {}".format(c.id, c.name))
+    resArr = session.query(City.id, City.name, State.name)
+    resFilteredArr = resArr.filter(City.state_id == State.id).order_by(City.id)
+    for r in resFilteredArr:
+        print("{}: {} -> {}".format(r[0], r[1], r[2]))
