@@ -18,7 +18,6 @@ if __name__ == '__main__':
     session = Session()
     res = session.query(State).filter(State.name == sys.argv[4])
     if res:
-        for r in res:
-            print(r.id)
+        print(res[0].id)
     else:
         print('Not found')
