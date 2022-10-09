@@ -14,10 +14,11 @@ if __name__ == '__main__':
         'mysql+mysqldb://{}:{}@localhost:3306/{}'
         .format(sys.argv[1], sys.argv[2], sys.argv[3])
     )
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
     res = session.query(State).filter(State.name == sys.argv[4])
-    if res:
+    try:
         print(res[0].id)
-    else:
+    except IndexError():
         print('Not found')
