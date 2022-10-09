@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 a script that adds the State object “Louisiana”
 to the database hbtn_0e_6_usa
@@ -17,8 +17,7 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    res = session.query(State).filter(State.name == sys.argv[4]).get()
-    if res:
-        print(res)
-    else:
-        print('Not found')
+    louisiana = State(name='Louisiana')
+    session.add(louisiana)
+    session.commit()
+    print(louisiana.id)
