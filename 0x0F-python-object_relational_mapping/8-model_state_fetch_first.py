@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """
-a script that lists all State objects from the database hbtn_0e_6_usa
+a script that prints the first State object from the database
+hbtn_0e_6_usa
 """
 import sys
-from model_state import State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
+from model_state import State
 
 
 if __name__ == '__main__':
@@ -15,6 +16,5 @@ if __name__ == '__main__':
     )
     Session = sessionmaker(bind=engine)
     session = Session()
-    res = session.query(State).filter(State.id)
-    for r in res:
-        print("{}: {}".format(r.id, r.name))
+    res = session.query(State).first()
+    print("{}: {}".format(res.id, res.name))
