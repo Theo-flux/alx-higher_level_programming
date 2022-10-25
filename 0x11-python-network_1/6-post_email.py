@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """
-display the value of the X-Request-Id variable
-found in the header of the response.
+A script that:
+- takes in a URL
+- sends a POST request to the passed URL
+- takes email as a parameter
+- displays the body of the response
 """
 
 
