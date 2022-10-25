@@ -9,5 +9,5 @@ if __name__ == '__main__':
     from sys import argv
     import requests
 
-    with requests.post(argv[1], {'email': argv[2]}) as res:
+    with requests.post(argv[1], data={'email': argv[2]}) as res:
         print(res.text)
