@@ -12,6 +12,6 @@ request(API_URL, function (err, res, body) {
     const bodyJSON = JSON.parse(body);
     console.log(bodyJSON.title);
   } else {
-    console.log(`code: ${res.statusCode}`);
+    console.log('Error code: ' + res.statusCode);
   }
 });
