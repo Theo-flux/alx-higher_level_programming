@@ -1,16 +1,17 @@
 #!/usr/bin/node
-// script that prints out the title corresponding to an id
-const { argv } = require('process');
-const request = require('request');
+// script that prints out the body.title from a  GET request
 
-const URL = `https://swapi-api.hbtn.io/api/films/${argv[2]}`;
-request(URL, (err, res, body) => {
+const request = require('request');
+const episodeNum = process.argv[2];
+const API_URL = 'https://swapi-api.hbtn.io/api/films/';
+
+request(API_URL + episodeNum, function (err, response, body) {
   if (err) {
     console.log(err);
-  } else if (res.statusCode === 200) {
-    const bodyJSON = JSON.parse(body);
-    console.log(bodyJSON.title);
+  } else if (response.statusCode === 200) {
+    const responseJSON = JSON.parse(body);
+    console.log(responseJSON.title);
   } else {
-    console.log(`code: ${res.statusCode}`);
+    console.log('Error code: ' + response.statusCode);
   }
 });
