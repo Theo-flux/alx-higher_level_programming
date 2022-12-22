@@ -3,7 +3,8 @@ $('document').ready(() => {
         {
             url: 'https://swapi-api.alx-tools.com/api/films/?format=json',
             success: (res) => {
-                res.results.map((data, index) => {
+                const { results } = res;
+                results.map((data) => {
                     $('UL#list_movies').append(`<li>${data.title}</li>`)
                 })
             }
